@@ -4,6 +4,9 @@ import hubStore from '../../stores/hubStore';
 
 import Video from '../Video';
 
+import { Papered } from '../muiUtil';
+import Grid from '@material-ui/core/Grid';
+
 export default function VideoLounge() {
   const [streams, setStreams] = useState([]);
 
@@ -16,11 +19,17 @@ export default function VideoLounge() {
   });
 
   return (
-    <>
-      <Video stream={window.localStream} />
-      {streams.map((stream) => (
-        <Video stream={stream} />
-      ))}
-    </>
+    <Papered>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6}>
+          <Video stream={window.localStream} muted />
+        </Grid>
+        {streams.map((stream) => (
+          <Grid item xs={12} sm={6}>
+            <Video stream={stream} />
+          </Grid>
+        ))}
+      </Grid>
+    </Papered>
   );
 }

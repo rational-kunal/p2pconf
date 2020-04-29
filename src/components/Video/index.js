@@ -11,7 +11,7 @@ export default function Video({ stream }) {
 
   return (
     <div style={{ marginBottom: 12 }}>
-      <video width="100px" height="auto" ref={videoRef} autoPlay></video>
+      <video width="100%" height="auto" ref={videoRef} autoPlay></video>
     </div>
   );
 }
