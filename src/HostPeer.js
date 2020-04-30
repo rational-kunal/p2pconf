@@ -10,7 +10,7 @@ export default class HostPeer {
   constructor(master = false) {
     navigator.mediaDevices
       .getUserMedia({
-        video: true,
+        video: { width: 320, height: 180, facingMode: 'user' },
         audio: false,
       })
       .then((stream) => {
