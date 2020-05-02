@@ -30,14 +30,38 @@ export default function Video({ stream, should }) {
 
   return (
     <Card variant="outlined">
-      <CardContent style={{ padding: 4 }}>
-        <video width="100%" height="auto" ref={videoRef} autoPlay></video>
+      <CardContent
+        style={{
+          width: '100%',
+          paddingTop: '56.25%',
+          position: 'relative',
+        }}
+      >
+        <video
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+          }}
+          ref={videoRef}
+          autoPlay
+        ></video>
       </CardContent>
       <CardActions disableSpacing style={{ paddingTop: 0 }}>
-        <IconButton aria-label="play" onClick={() => setIsPause((isP) => !isP)}>
+        <IconButton
+          aria-label="play"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+          onClick={() => setIsPause((isP) => !isP)}
+        >
           {isPause ? <PlayArrowIcon /> : <PauseIcon />}
         </IconButton>
-        <IconButton aria-label="mute" onClick={() => setIsMute((isM) => !isM)}>
+        <IconButton
+          aria-label="mute"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)', marginLeft: 4 }}
+          onClick={() => setIsMute((isM) => !isM)}
+        >
           {isMute ? <VolumeUpIcon /> : <VolumeOffIcon />}
         </IconButton>
       </CardActions>
