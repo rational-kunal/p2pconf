@@ -29,30 +29,31 @@ export default function Video({ stream, should }) {
   }, [isPause]);
 
   return (
-    <Card variant="outlined">
-      <CardContent
+    <Card
+      variant="outlined"
+      style={{
+        width: '100%',
+        height: '300px',
+        position: 'relative',
+        backgroundColor: '#333',
+      }}
+    >
+      <video
         style={{
-          width: '100%',
-          paddingTop: '56.25%',
-          position: 'relative',
+          position: 'absolute',
+          height: '300px',
+          left: 0,
+          right: 0,
+          margin: 'auto',
+          backgroundColor: '#333',
         }}
-      >
-        <video
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-          }}
-          ref={videoRef}
-          autoPlay
-        ></video>
-      </CardContent>
-      <CardActions disableSpacing style={{ paddingTop: 0 }}>
+        ref={videoRef}
+        autoPlay
+      ></video>
+      <CardActions disableSpacing>
         <IconButton
           aria-label="play"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.25)' }}
           onClick={() => setIsPause((isP) => !isP)}
         >
           {isPause ? <PlayArrowIcon /> : <PauseIcon />}
