@@ -12,7 +12,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { Box } from '@material-ui/core';
 
 export default function JoinLink() {
-  const [peerId, setPeerId] = useState(null);
+  const [peerId, setPeerId] = useState(hubStore.hostPeerId);
   const joinUrl = homepage + 'follow/' + peerId;
 
   useEffect(() => {
