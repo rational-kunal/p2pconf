@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { homepage } from '../../../package.json';
 
 import hubStore from '../../stores/hubStore';
 
@@ -22,7 +23,7 @@ export default function Room() {
         <span>
           connect at{' '}
           <b>
-            https://p2p-conf.netlify.app/follow/
+            {homepage}follow/
             {peerId}
           </b>
         </span>
