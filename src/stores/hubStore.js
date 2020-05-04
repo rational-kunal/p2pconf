@@ -61,11 +61,6 @@ dispatcher.register((action) => {
       hubStore.emitChange();
       break;
 
-    case actionTypes.HOST_NAME_CHANGE:
-      _hostPeerName = action.hostName;
-      hubStore.emitChange();
-      break;
-
     case actionTypes.CONNECTION_OPENED:
       if (_masterPeerId == null) {
         _connections.forEach((connection) => {

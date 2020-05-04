@@ -8,13 +8,6 @@ export function hostPeerIdGenerated(id) {
   });
 }
 
-export function hostPeerNameChange(name) {
-  dispatcher.dispatch({
-    actionType: actionTypes.HOST_NAME_CHANGE,
-    hostName: name,
-  });
-}
-
 export function connectionOpened(connection) {
   dispatcher.dispatch({
     actionType: actionTypes.CONNECTION_OPENED,
