@@ -21,11 +21,11 @@ export default function VideoLounge() {
   return (
     <Papered>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={6} sm={4} md={4}>
           <Video stream={window.localStream} muted />
         </Grid>
         {streams.map((stream) => (
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={6} sm={4} md={4}>
             <Video stream={stream} />
           </Grid>
         ))}
