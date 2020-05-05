@@ -34,7 +34,7 @@ function AppContainer() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container style={{ marginTop: 24, marginBottom: 24 }} maxWidth="md">
+      <Container style={{ marginTop: 24, marginBottom: 24 }} maxWidth="lg">
         <App />
       </Container>
     </ThemeProvider>
